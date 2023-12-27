@@ -3,9 +3,9 @@ train: images
 val: images
 
 names:
-  0: 0
-  1: 1
-  2: 2
-  3: 3
-  4: 4
-  5: 5
+  0: person
+  1: vest
+  2: blue
+  3: red
+  4: white
+  5: yellow

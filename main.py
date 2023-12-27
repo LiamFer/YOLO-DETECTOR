@@ -2,7 +2,7 @@ from ultralytics import YOLO
 
 
 
-model = YOLO("yolov8n.yaml")  # build a new model from scratch
+model = YOLO("yolov8l.yaml")  # build a new model from scratch
 
 
-model.train(data="config.yaml", epochs=1)  # train the model
+model.train(data="config.yaml", epochs=15)  # train the model
