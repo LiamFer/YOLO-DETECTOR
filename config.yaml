@@ -1,0 +1,11 @@
+path: C:\Users\Windows\Desktop\CHV_dataset\data
+train: images
+val: images
+
+names:
+  0: 0
+  1: 1
+  2: 2
+  3: 3
+  4: 4
+  5: 5
