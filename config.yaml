@@ -1,11 +1,12 @@
-path: C:\Users\Windows\Desktop\CHV_dataset\data
+
+path: C:\Users\Pichau\Downloads\CHV_dataset
 train: images
 val: images
 
 names:
   0: person
   1: vest
-  2: blue
-  3: red
-  4: white
-  5: yellow
+  2: blue helmet
+  3: red helmet
+  4: white helmet
+  5: yellow helmet
