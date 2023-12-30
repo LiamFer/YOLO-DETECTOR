@@ -2,30 +2,28 @@ import os
 from ultralytics import YOLO
 import cv2
 
-VIDEOS_DIR = os.path.abspath("C:\\Users\\Pichau\\Documents\\studies\\YOLO-DETECTOR")
-
 VIDEOS_DIR = os.path.join('.', 'videos')
 
-video_path = os.path.join(VIDEOS_DIR, 'video.mp4')
-video_path_out = '{}_out.mp4'.format(video_path)
+video_path = os.path.join(VIDEOS_DIR,'construction.mp4')
+video_path_out = '{}_processed.mp4'.format(video_path)
 
 cap = cv2.VideoCapture(video_path)
 if not cap.isOpened():
     print("Error: Could not open the video.")
 else:
     ret, frame = cap.read()
-    H, W, _ = frame.shape  # Correct indentation
+    H, W, _ = frame.shape
 
-model_path = os.path.join('.', 'runs', 'detect', 'train2', 'weights', 'last.pt')
+out = cv2.VideoWriter(video_path_out, cv2.VideoWriter_fourcc('m', 'p', '4', 'v'), int(cap.get(cv2.CAP_PROP_FPS)), (W, H))
 
-# Load a model
+model_path = r"runs/detect/train/weights/last.pt"
+
 try:
-    model = YOLO(model_path)  # load a custom model
+    model = YOLO(model_path) 
 except Exception as e:
     print(f"Error loading the YOLO model: {e}")
 
 threshold = 0.5
-
 while ret:
     results = model(frame)[0]
 
