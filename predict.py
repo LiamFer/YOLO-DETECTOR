@@ -4,7 +4,9 @@ import cv2
 
 VIDEOS_DIR = os.path.abspath("C:\\Users\\Pichau\\Documents\\studies\\YOLO-DETECTOR")
 
-video_path = os.path.join(VIDEOS_DIR, 'videos', 'construction.mp4')
+VIDEOS_DIR = os.path.join('.', 'videos')
+
+video_path = os.path.join(VIDEOS_DIR, 'video.mp4')
 video_path_out = '{}_out.mp4'.format(video_path)
 
 cap = cv2.VideoCapture(video_path)
@@ -14,10 +16,7 @@ else:
     ret, frame = cap.read()
     H, W, _ = frame.shape  # Correct indentation
 
-out = cv2.VideoWriter(video_path_out, cv2.VideoWriter_fourcc('m', 'p', '4', 'v'), int(cap.get(cv2.CAP_PROP_FPS)), (W, H))
-
-model_path = os.path.abspath("C:\\Users\\Pichau\\Documents\\studies\\YOLO-DETECTOR\\runs\\detect\\train4\\weights\\last.pt")
-print(model_path)
+model_path = os.path.join('.', 'runs', 'detect', 'train2', 'weights', 'last.pt')
 
 # Load a model
 try:
