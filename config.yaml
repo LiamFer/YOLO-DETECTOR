@@ -10,3 +10,6 @@ names:
   3: red helmet
   4: white helmet
   5: yellow helmet
+
+yolo_config:
+    conf: 0.6
